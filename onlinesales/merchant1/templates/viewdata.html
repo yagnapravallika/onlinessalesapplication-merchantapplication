@@ -1,0 +1,31 @@
+{% load staticfiles %}
+{% include 'head.html' %}
+{% include 'menu.html' %}
+<br>
+<br>
+
+<table align="center" border="2">
+    <tr>
+        <th colspan="6" style="text-align: center">VIEW PRODUCT DETAILS</th>
+    </tr>
+    <tr>
+        <th WIDTH="120" HEIGHT="50">PRODUCT ID</th>
+        <th WIDTH="120" HEIGHT="50">PRODUCT NAME</th>
+        <th WIDTH="120" HEIGHT="50">PRODUCT PRICE</th>
+        <th width="120" height="50">MERCHANT ID</th>
+        <th width="120" height="50">UPDATE</th>
+        <th width="120" height="50">DELETE</th>
+    </tr>
+    {% for x in data %}
+<tr>
+    <th>{{ x.pk }}</th>
+    <th>{{ x.fields.productname }}   </th>
+    <th>{{ x.fields.productprice }}   </th>
+    <th>{{ x.fields.merchantid }}   </th>
+    <th><a href="{% url 'update' %}?productid={{ x.pk }}">UPDATE</a>   </th>
+    <th> <a href="{% url 'delete'%}?productid={{ x.pk }}">DELETE</a>   </th>
+
+
+</tr>
+    {% endfor %}
+</table>

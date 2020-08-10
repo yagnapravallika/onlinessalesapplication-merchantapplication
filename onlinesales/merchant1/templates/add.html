@@ -1,0 +1,63 @@
+{% load staticfiles %}
+
+{% include 'head.html' %}
+{% include 'menu.html' %}
+{% if data %}
+    {% for x in data %}
+    <form action="{% url 'updatesave' %}" method="post">
+    {% csrf_token %}
+    <table align="center" border="2">
+        <tr>
+            <th colspan="2" style="text-align: center">ENTER UPDATE PRODUCT DETAILS</th>
+        </tr>
+        <tr>
+            <th WIDTH="150" HEIGHT="50">PRODUCT ID</th>
+            <th WIDTH="150" HEIGHT="50"><input type="text" required name="t1" value="{{ x.pk }}" readonly></th>
+        </tr>
+        <tr>
+            <th WIDTH="150" HEIGHT="50">PRODUCT NAME</th>
+            <th WIDTH="150" HEIGHT="50"><input type="text" required name="t2" value="{{ x.fields.productname }}"></th>
+        </tr>
+        <tr>
+            <th WIDTH="150" HEIGHT="50">PRODUCT PRICE</th>
+            <th WIDTH="150" HEIGHT="50"><input type="number" required name="t3" value="{{ x.fields.productprice }}"></th>
+        </tr>
+{#        <tr>#}
+{#            <th width="150" height="50">MERCHANT ID</th>#}
+{#        </tr>#}
+
+        <tr>
+            <th colspan="2">
+                <button type="submit">update</button>
+            </th>
+        </tr>
+    </table>
+</form>{% endfor %}
+{% else %}
+
+<form action="{% url 'addsave' %}" method="post">
+    {% csrf_token %}
+    <table align="center" border="2">
+        <tr>
+            <th colspan="2">ENTER PRODUCT DETAILS</th>
+        </tr>
+        <tr>
+            <th WIDTH="150" HEIGHT="50">PRODUCT NAME</th>
+            <th WIDTH="150" HEIGHT="50"><input type="text" required name="t1"></th>
+        </tr>
+        <tr>
+            <th WIDTH="150" HEIGHT="50">PRODUCT PRICE</th>
+            <th WIDTH="150" HEIGHT="50"><input type="number" required name="t2"></th>
+        </tr>
+        <tr>
+            <th WIDTH="150" HEIGHT="50">MERCHANT ID</th>
+            <th WIDTH="150" HEIGHT="50"><input type="number" required name="t3"></th>
+        </tr>
+        <tr>
+            <th colspan="2">
+                <button type="submit">save</button>
+            </th>
+        </tr>
+    </table>
+</form>
+{% endif %}

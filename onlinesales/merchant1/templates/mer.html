@@ -1,0 +1,18 @@
+{% load staticfiles %}
+<html>
+<body>
+{% include 'head.html' %}
+<br/><br/>
+{% include 'menu.html' %}
+<br/><br/>
+
+{% for x in data %}
+    <h1 align="center">WELCOME{{ x.fields.merchentname }}</h1>
+    <table align="center" border="0">
+
+        <tr><th width="150" height="50">MERCHENT ID{{ x.pk }}</th></tr>
+        <tr> <th width="150" height="50">MARCHENT EMAIL ID{{ x.fields.emailid }}</th></tr>
+        <tr><th width="150" height="50">MARCHENT CONTACT{{ x.fields.contactno }}</th></tr>
+    <tr><th width="150" height="50" ><a href="">CHANGE PASSWORD</a> </th></tr>
+    </table>
+{% endfor %}

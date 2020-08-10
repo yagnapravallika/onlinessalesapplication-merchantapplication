@@ -1,0 +1,41 @@
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-btn btn-warning">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          PRODUCT
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="{% url 'add' %}">ADD PRODUCT</a>
+          <a class="dropdown-item" href="{% url 'vieww' %}">VIEW PRODUCT</a>
+          <a class="dropdown-item" href="#">UPDATE PRODUCT</a>
+          <a class="dropdown-item" href="#">DELETE PRODUCT</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          VIEW MERCHANT SALES
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">DAY WISE</a>
+          <a class="dropdown-item" href="#">WEEK WISE</a>
+          <a class="dropdown-item" href="#">MONTH WISE</a>
+          <a class="dropdown-item" href="#">YEAR WISE</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">VIEW COMPLAINTS</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#">LOGOUT</a>
+      </li>
+
+
+    </ul>
+  </div>
+</nav>
